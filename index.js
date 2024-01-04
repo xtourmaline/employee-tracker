@@ -1,6 +1,7 @@
-const { table } = require("table");
 const mysql = require('mysql2/promise');
 const inquirer = require("inquirer");
+
+const view = require("./lib/view");
 
 const init = async () => {
     const db = await mysql.createConnection(
@@ -13,35 +14,33 @@ const init = async () => {
     );
     console.log("Connected to the tracker_db database.");
     
-    const task = await inquirer.prompt({
-        name: "task",
-        type: "list",
-        message: "What would you like to do?",
-        choices: [
-            "View All Employees",
-            "Add Employee",
-            "Update Employee Role",
-            "View All Role",
-            "Add Role",
-            "View All Departments",
-            "Add Department",
-            "Quit"
-        ]
-    });
-
-    if (task.task === "View All Employees") {
-        const data = (await db.query(
-        `SELECT e.id, e.first_name, e.last_name, r.title, d.name, r.salary, concat(m.first_name, " ", m.last_name)
-        FROM employee e
-        JOIN role r ON r.id = e.role_id
-        JOIN department d ON d.id = r.department_id
-        LEFT JOIN employee m ON m.id = e.manager_id;`))[0];
-        const employees = data.map (row => Object.values(row));
-
-        employees.unshift(["id", "first name", "last name", "title", "department", "salary", "manager"]);
-        console.log(table(employees));
-    } else if () {
-        
+    while (true) {
+        const choice = (await inquirer.prompt({
+            name: "task",
+            type: "list",
+            message: "What would you like to do?",
+            choices: [
+                "View All Employees",
+                "Add Employee",
+                "Update Employee Role",
+                "View All Role",
+                "Add Role",
+                "View All Departments",
+                "Add Department",
+                "Quit"
+            ]
+        })).task;
+    
+        if (choice === "View All Employees") {
+            await view.viewAllEmployees(db);
+        } else if (choice === "View All Role") {
+            await view.viewAllRoles(db);
+        } else if (choice === "View All Departments") {
+            await view.viewAllDepartments(db);
+        } else if (choice === "Quit") {
+            console.log("Goodbye!");
+            process.exit(0);
+        }
     }
 
     //const results = await db.query("SELECT * FROM DEPARTMENT");
