@@ -14,7 +14,7 @@ const init = async () => {
             database: "tracker_db"
         }
     );
-    console.log("Connected to the tracker_db database.");
+    console.log("Welcome to the Employee Tracker!");
     
     while (true) {
         const choice = (await inquirer.prompt({
