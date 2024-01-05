@@ -11,13 +11,8 @@ Watch a demo of my application [here](https://drive.google.com/file/d/11ZZYaDf4u
 ## Table of Contents
 
 - [Installation](#installation)
-
 - [Usage](#usage)
-
 - [Photos](#photos)
-
-- [Credits](#credits)
-
 - [License](#license)
 
 ## Installation
