@@ -1,4 +1,4 @@
-# employee-tracker
+# Employee Tracker
 
 ## Description
 
@@ -10,15 +10,15 @@ Watch a demo of my application [here](https://drive.google.com/file/d/11ZZYaDf4u
 
 ## Table of Contents
 
--[Installation](#installation)
+- [Installation](#installation)
 
--[Usage](#usage)
+- [Usage](#usage)
 
--[Photos](#photos)
+- [Photos](#photos)
 
--[Credits](#credits)
+- [Credits](#credits)
 
--[License](#license)
+- [License](#license)
 
 ## Installation
 
