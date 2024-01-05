@@ -25,7 +25,7 @@ const init = async () => {
                 "View All Employees",
                 "Add Employee",
                 "Update Employee Role",
-                "View All Role",
+                "View All Roles",
                 "Add Role",
                 "View All Departments",
                 "Add Department",
@@ -35,7 +35,7 @@ const init = async () => {
     
         if (choice === "View All Employees") {
             await view.viewAllEmployees(db);
-        } else if (choice === "View All Role") {
+        } else if (choice === "View All Roles") {
             await view.viewAllRoles(db);
         } else if (choice === "View All Departments") {
             await view.viewAllDepartments(db);
