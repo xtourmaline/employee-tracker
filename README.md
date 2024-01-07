@@ -6,7 +6,7 @@ This project is an employee tracker where you can track employees, roles, and de
 
 This program was created using tools like Node.js, Inquirer.js, and MySQL.
 
-Watch a demo of my application [here](https://drive.google.com/file/d/11ZZYaDf4uuX8Eba3GVM7U1YCifCjDcOm/view?pli=1)!
+Watch a demo of my application [here](https://drive.google.com/file/d/1vHTo3n1i7vTIYKYwcEuON3igRe5sS16w/view?usp=sharing))!
 
 ## Table of Contents
 
